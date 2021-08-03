@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="hello"><!-- jpa 쓸것인데 뭘쓸것이냐 데이터베이스 이름:hello -->
+        <properties>
+            <!-- 필수 속성 : 데이터베이스 접근 정보 -->
+            <!-- javax.~ : 다른 jpa 구현 라이브러리 를 써도 그대로 적용됨,표준을 따름 ex) eclipselink,DateNucleus,Hibernate-->
+            <!-- hibernate.~ : hibernate 라이브러리에만 적용됨 -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+            <!-- hibernate.dialect 는 특정 데이터베이스에 종속 되지않게 설계 mysql 쓰다가 oracle 써도 바뀌어야한다.  -->
+            <!-- H2 : org.hibernate.dialect.H2Dialect -->
+            <!-- Oracle 10g : org.hibernate.dialect.Oracle10gDialect -->
+            <!-- MySQL : org.hibernate.dialect.MySQL5InnoDBDialect  -->
+
+
+            <!-- 옵션 -->
+            <property name="hibernate.show_sql" value="true"/>  <!-- hibernate.show_sql: db에 쿼리나가는거 볼꺼야 말꺼야 -->
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+        </properties>
+    </persistence-unit>
+</persistence>
