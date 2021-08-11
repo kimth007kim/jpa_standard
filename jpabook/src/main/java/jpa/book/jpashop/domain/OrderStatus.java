@@ -1,2 +1,4 @@
-package jpa.book.jpashop.domain;public enum OrderStatus {
+package jpa.book.jpashop.domain;
+
+public enum OrderStatus {
 }
